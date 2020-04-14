@@ -13,6 +13,7 @@ set(BUILD_CURL_EXE OFF CACHE BOOL "" FORCE) # Just using libcurl
 set(BUILD_TESTING OFF CACHE BOOL "" FORCE) # No tests
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE) # Build into cho++
 set(ENABLE_MANUAL OFF CACHE BOOL "" FORCE) # No manuals
+set(CHO_BUILD_GENERATOR OFF CACHE BOOL "" FORCE) # Build into cho++
 
 # OpenSSL
 if(WIN32)
@@ -24,11 +25,6 @@ else(WIN32)
 
 	find_package(OpenSSL)
 endif(WIN32)
-
-# Mstch
-add_subdirectory(external/mstch)
-include_directories(${mstch_INCLUDE_DIR})
-set_target_properties(mstch PROPERTIES FOLDER external)
 
 # CURL
 add_subdirectory(external/curl)
@@ -43,7 +39,17 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_definitions(-DUNICODE)
 add_definitions(-D_UNICODE)
 
+# Only if we want the generator
+if (CHO_BUILD_GENERATOR)
+
+	# Mstch
+	add_subdirectory(external/mstch)
+	include_directories(${mstch_INCLUDE_DIR})
+	set_target_properties(mstch PROPERTIES FOLDER external)
+	
+	add_subdirectory(cho_generator)
+endif (CHO_BUILD_GENERATOR)
+
 add_subdirectory(cho_json)
 add_subdirectory(cho_request)
-add_subdirectory(cho_generator)
 add_subdirectory(cho)

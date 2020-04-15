@@ -659,7 +659,7 @@ public:
 	}
 };
 
-void parse_path(const char* method, const std::string& original_path, cho::json& fetch_type, mstch::array& methods_context, api_data& a_riot_api_data, cho::json& a_json)
+void parse_path(const char* method, const std::string& original_path, const char* service, cho::json& fetch_type, mstch::array& methods_context, api_data& a_riot_api_data, cho::json& a_json)
 {
 	std::string path = original_path;
 	mstch::array required_params;
@@ -773,6 +773,7 @@ no_response:
 		{ "optional_params", optional_params },
 		{ "has_optional_args", has_optional },
 		{ "path_params", path_params },
+		{ "is_tft", strstr(service, "tft") != nullptr }
 	};
 
 	if (return_type.empty() == false)
@@ -929,7 +930,7 @@ int main()
 					auto fetch_types = { "get", "post", "put", "options" };
 					for (auto fetch_type : fetch_types)
 						if (path_info[fetch_type] != nullptr)
-							parse_path(fetch_type, path, *path_info[fetch_type], methods_context, riot_api_data, riot_api);
+							parse_path(fetch_type, path, service.c_str(), *path_info[fetch_type], methods_context, riot_api_data, riot_api);
 				}
 
 				service_context["service"] = get_c_style_service(service.c_str());

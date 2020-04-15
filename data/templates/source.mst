@@ -225,7 +225,33 @@ namespace cho
 		{
 			static const char* method = "{{{method_name}}}";
 			static const char* service = "{{{service}}}";
-			
+			{{#is_tft}}
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+			{{/is_tft}}
+
 			std::string path = string_format("%s{{{sprintf_path}}}", g_riot_api_servers[static_cast<int>(a_platform)]{{#path_params}}{{^has_converter}}, a_{{name}}{{/has_converter}}{{#has_converter}}, {{{converter_pre}}}a_{{name}}{{{converter_post}}}{{/has_converter}}{{/path_params}});
 			{{#has_optional_args}}
 			bool is_first = true;

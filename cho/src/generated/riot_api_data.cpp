@@ -1528,7 +1528,7 @@ namespace cho
 		{
 			static const char* method = "get_champion_mastery_score";
 			static const char* service = "champion_mastery_v4";
-			
+
 			std::string path = string_format("%s/lol/champion-mastery/v4/scores/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1584,7 +1584,7 @@ namespace cho
 		{
 			static const char* method = "get_all_champion_masteries";
 			static const char* service = "champion_mastery_v4";
-			
+
 			std::string path = string_format("%s/lol/champion-mastery/v4/champion-masteries/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1642,7 +1642,7 @@ namespace cho
 		{
 			static const char* method = "get_champion_mastery";
 			static const char* service = "champion_mastery_v4";
-			
+
 			std::string path = string_format("%s/lol/champion-mastery/v4/champion-masteries/by-summoner/%s/by-champion/%d", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str(), a_champion_id);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1700,7 +1700,7 @@ namespace cho
 		{
 			static const char* method = "get_champion_info";
 			static const char* service = "champion_v3";
-			
+
 			std::string path = string_format("%s/lol/platform/v3/champion-rotations", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1758,7 +1758,7 @@ namespace cho
 		{
 			static const char* method = "get_tournaments";
 			static const char* service = "clash_v1";
-			
+
 			std::string path = string_format("%s/lol/clash/v1/tournaments", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1814,7 +1814,7 @@ namespace cho
 		{
 			static const char* method = "get_team_by_id";
 			static const char* service = "clash_v1";
-			
+
 			std::string path = string_format("%s/lol/clash/v1/teams/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_team_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1870,7 +1870,7 @@ namespace cho
 		{
 			static const char* method = "get_tournament_by_id";
 			static const char* service = "clash_v1";
-			
+
 			std::string path = string_format("%s/lol/clash/v1/tournaments/%d", g_riot_api_servers[static_cast<int>(a_platform)], a_tournament_id);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1926,7 +1926,7 @@ namespace cho
 		{
 			static const char* method = "get_tournament_by_team";
 			static const char* service = "clash_v1";
-			
+
 			std::string path = string_format("%s/lol/clash/v1/tournaments/by-team/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_team_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -1982,7 +1982,7 @@ namespace cho
 		{
 			static const char* method = "get_players_by_summoner";
 			static const char* service = "clash_v1";
-			
+
 			std::string path = string_format("%s/lol/clash/v1/players/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2048,7 +2048,7 @@ namespace cho
 		{
 			static const char* method = "get_league_entries";
 			static const char* service = "league_exp_v4";
-			
+
 			std::string path = string_format("%s/lol/league-exp/v4/entries/%d/%d/%d", g_riot_api_servers[static_cast<int>(a_platform)], a_queue, a_tier, a_division);
 			bool is_first = true;
 			setup_optional_argument(path, "page", a_optional.page, is_first);
@@ -2110,7 +2110,7 @@ namespace cho
 		{
 			static const char* method = "get_league_by_id";
 			static const char* service = "league_v4";
-			
+
 			std::string path = string_format("%s/lol/league/v4/leagues/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_league_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2166,7 +2166,7 @@ namespace cho
 		{
 			static const char* method = "get_master_league";
 			static const char* service = "league_v4";
-			
+
 			std::string path = string_format("%s/lol/league/v4/masterleagues/by-queue/%d", g_riot_api_servers[static_cast<int>(a_platform)], a_queue);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2228,7 +2228,7 @@ namespace cho
 		{
 			static const char* method = "get_league_entries";
 			static const char* service = "league_v4";
-			
+
 			std::string path = string_format("%s/lol/league/v4/entries/%d/%d/%d", g_riot_api_servers[static_cast<int>(a_platform)], a_queue, a_tier, a_division);
 			bool is_first = true;
 			setup_optional_argument(path, "page", a_optional.page, is_first);
@@ -2286,7 +2286,7 @@ namespace cho
 		{
 			static const char* method = "get_challenger_league";
 			static const char* service = "league_v4";
-			
+
 			std::string path = string_format("%s/lol/league/v4/challengerleagues/by-queue/%d", g_riot_api_servers[static_cast<int>(a_platform)], a_queue);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2342,7 +2342,7 @@ namespace cho
 		{
 			static const char* method = "get_grandmaster_league";
 			static const char* service = "league_v4";
-			
+
 			std::string path = string_format("%s/lol/league/v4/grandmasterleagues/by-queue/%d", g_riot_api_servers[static_cast<int>(a_platform)], a_queue);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2398,7 +2398,7 @@ namespace cho
 		{
 			static const char* method = "get_league_entries_for_summoner";
 			static const char* service = "league_v4";
-			
+
 			std::string path = string_format("%s/lol/league/v4/entries/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2456,7 +2456,7 @@ namespace cho
 		{
 			static const char* method = "get_shard_data";
 			static const char* service = "lol_status_v3";
-			
+
 			std::string path = string_format("%s/lol/status/v3/shard-data", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2514,7 +2514,7 @@ namespace cho
 		{
 			static const char* method = "get_leaderboards";
 			static const char* service = "lor_ranked_v1";
-			
+
 			std::string path = string_format("%s/lor/ranked/v1/leaderboards", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2574,7 +2574,7 @@ namespace cho
 		{
 			static const char* method = "get_match";
 			static const char* service = "match_v4";
-			
+
 			std::string path = string_format("%s/lol/match/v4/matches/%lld", g_riot_api_servers[static_cast<int>(a_platform)], a_match_id);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2630,7 +2630,7 @@ namespace cho
 		{
 			static const char* method = "get_match_timeline";
 			static const char* service = "match_v4";
-			
+
 			std::string path = string_format("%s/lol/match/v4/timelines/by-match/%lld", g_riot_api_servers[static_cast<int>(a_platform)], a_match_id);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2688,7 +2688,7 @@ namespace cho
 		{
 			static const char* method = "get_matchlist";
 			static const char* service = "match_v4";
-			
+
 			std::string path = string_format("%s/lol/match/v4/matchlists/by-account/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_account_id).c_str());
 			bool is_first = true;
 			setup_optional_argument(path, "champion", a_optional.champion, is_first);
@@ -2752,7 +2752,7 @@ namespace cho
 		{
 			static const char* method = "get_match_ids_by_tournament_code";
 			static const char* service = "match_v4";
-			
+
 			std::string path = string_format("%s/lol/match/v4/matches/by-tournament-code/%s/ids", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_tournament_code).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2810,7 +2810,7 @@ namespace cho
 		{
 			static const char* method = "get_match_by_tournament_code";
 			static const char* service = "match_v4";
-			
+
 			std::string path = string_format("%s/lol/match/v4/matches/%lld/by-tournament-code/%s", g_riot_api_servers[static_cast<int>(a_platform)], a_match_id, cho::request::url_encode(a_tournament_code).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2868,7 +2868,7 @@ namespace cho
 		{
 			static const char* method = "get_featured_games";
 			static const char* service = "spectator_v4";
-			
+
 			std::string path = string_format("%s/lol/spectator/v4/featured-games", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2924,7 +2924,7 @@ namespace cho
 		{
 			static const char* method = "get_current_game_info_by_summoner";
 			static const char* service = "spectator_v4";
-			
+
 			std::string path = string_format("%s/lol/spectator/v4/active-games/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -2984,7 +2984,7 @@ namespace cho
 		{
 			static const char* method = "get_by_summoner_id";
 			static const char* service = "summoner_v4";
-			
+
 			std::string path = string_format("%s/lol/summoner/v4/summoners/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3040,7 +3040,7 @@ namespace cho
 		{
 			static const char* method = "get_by_summoner_name";
 			static const char* service = "summoner_v4";
-			
+
 			std::string path = string_format("%s/lol/summoner/v4/summoners/by-name/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_summoner_name).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3096,7 +3096,7 @@ namespace cho
 		{
 			static const char* method = "get_by_puuid";
 			static const char* service = "summoner_v4";
-			
+
 			std::string path = string_format("%s/lol/summoner/v4/summoners/by-puuid/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_puuid).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3152,7 +3152,7 @@ namespace cho
 		{
 			static const char* method = "get_by_account_id";
 			static const char* service = "summoner_v4";
-			
+
 			std::string path = string_format("%s/lol/summoner/v4/summoners/by-account/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_account_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3210,7 +3210,31 @@ namespace cho
 		{
 			static const char* method = "get_master_league";
 			static const char* service = "tft_league_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/league/v1/master", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3264,7 +3288,31 @@ namespace cho
 		{
 			static const char* method = "get_challenger_league";
 			static const char* service = "tft_league_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/league/v1/challenger", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3318,7 +3366,31 @@ namespace cho
 		{
 			static const char* method = "get_grandmaster_league";
 			static const char* service = "tft_league_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/league/v1/grandmaster", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3374,7 +3446,31 @@ namespace cho
 		{
 			static const char* method = "get_league_by_id";
 			static const char* service = "tft_league_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/league/v1/leagues/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_league_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3434,7 +3530,31 @@ namespace cho
 		{
 			static const char* method = "get_league_entries";
 			static const char* service = "tft_league_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/league/v1/entries/%s/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_tier).c_str(), cho::request::url_encode(a_division).c_str());
 			bool is_first = true;
 			setup_optional_argument(path, "page", a_optional.page, is_first);
@@ -3492,7 +3612,31 @@ namespace cho
 		{
 			static const char* method = "get_league_entries_for_summoner";
 			static const char* service = "tft_league_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/league/v1/entries/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3552,7 +3696,31 @@ namespace cho
 		{
 			static const char* method = "get_match";
 			static const char* service = "tft_match_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/match/v1/matches/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_match_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3610,7 +3778,31 @@ namespace cho
 		{
 			static const char* method = "get_match_ids_by_puuid";
 			static const char* service = "tft_match_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/match/v1/matches/by-puuid/%s/ids", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_puuid).c_str());
 			bool is_first = true;
 			setup_optional_argument(path, "count", a_optional.count, is_first);
@@ -3672,7 +3864,31 @@ namespace cho
 		{
 			static const char* method = "get_by_summoner_id";
 			static const char* service = "tft_summoner_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/summoner/v1/summoners/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3728,7 +3944,31 @@ namespace cho
 		{
 			static const char* method = "get_by_summoner_name";
 			static const char* service = "tft_summoner_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/summoner/v1/summoners/by-name/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_summoner_name).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3784,7 +4024,31 @@ namespace cho
 		{
 			static const char* method = "get_by_puuid";
 			static const char* service = "tft_summoner_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/summoner/v1/summoners/by-puuid/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_puuid).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3840,7 +4104,31 @@ namespace cho
 		{
 			static const char* method = "get_by_account_id";
 			static const char* service = "tft_summoner_v1";
-			
+
+			switch (a_platform)
+			{
+			case cho::platform_id::eun1:
+			case cho::platform_id::euw1:
+			case cho::platform_id::tr1:
+			case cho::platform_id::ru:
+				a_platform = cho::platform_id::europe;
+				break;
+
+			case cho::platform_id::jp1:
+			case cho::platform_id::kr:
+				a_platform = cho::platform_id::asia;
+				break;
+
+			case cho::platform_id::la1:
+			case cho::platform_id::la2:
+			case cho::platform_id::na1:
+			case cho::platform_id::oc1:
+			case cho::platform_id::pbe1:
+			case cho::platform_id::br1:
+				a_platform = cho::platform_id::americas;
+				break;
+			}
+
 			std::string path = string_format("%s/tft/summoner/v1/summoners/by-account/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_account_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3900,7 +4188,7 @@ namespace cho
 		{
 			static const char* method = "get_third_party_code_by_summoner_id";
 			static const char* service = "third_party_code_v4";
-			
+
 			std::string path = string_format("%s/lol/platform/v4/third-party-code/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3962,7 +4250,7 @@ namespace cho
 		{
 			static const char* method = "create_tournament_code";
 			static const char* service = "tournament_stub_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament-stub/v4/codes", g_riot_api_servers[static_cast<int>(a_platform)]);
 			bool is_first = true;
 			setup_optional_argument(path, "count", a_optional.count, is_first);
@@ -4018,7 +4306,7 @@ namespace cho
 		{
 			static const char* method = "register_provider_data";
 			static const char* service = "tournament_stub_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament-stub/v4/providers", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4072,7 +4360,7 @@ namespace cho
 		{
 			static const char* method = "register_tournament";
 			static const char* service = "tournament_stub_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament-stub/v4/tournaments", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4128,7 +4416,7 @@ namespace cho
 		{
 			static const char* method = "get_lobby_events_by_code";
 			static const char* service = "tournament_stub_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament-stub/v4/lobby-events/by-code/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_tournament_code).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4190,7 +4478,7 @@ namespace cho
 		{
 			static const char* method = "create_tournament_code";
 			static const char* service = "tournament_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament/v4/codes", g_riot_api_servers[static_cast<int>(a_platform)]);
 			bool is_first = true;
 			setup_optional_argument(path, "count", a_optional.count, is_first);
@@ -4246,7 +4534,7 @@ namespace cho
 		{
 			static const char* method = "register_provider_data";
 			static const char* service = "tournament_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament/v4/providers", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4300,7 +4588,7 @@ namespace cho
 		{
 			static const char* method = "register_tournament";
 			static const char* service = "tournament_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament/v4/tournaments", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4356,7 +4644,7 @@ namespace cho
 		{
 			static const char* method = "get_tournament_code";
 			static const char* service = "tournament_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament/v4/codes/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_tournament_code).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4408,7 +4696,7 @@ namespace cho
 		{
 			static const char* method = "update_code";
 			static const char* service = "tournament_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament/v4/codes/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_tournament_code).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4462,7 +4750,7 @@ namespace cho
 		{
 			static const char* method = "get_lobby_events_by_code";
 			static const char* service = "tournament_v4";
-			
+
 			std::string path = string_format("%s/lol/tournament/v4/lobby-events/by-code/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_tournament_code).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());

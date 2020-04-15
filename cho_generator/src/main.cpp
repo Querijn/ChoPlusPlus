@@ -773,7 +773,7 @@ no_response:
 		{ "optional_params", optional_params },
 		{ "has_optional_args", has_optional },
 		{ "path_params", path_params },
-		{ "is_tft", strstr(service, "tft") != nullptr }
+		{ "is_tft_match_history", strcmp(service, "tft-match-v1") == 0 }
 	};
 
 	if (return_type.empty() == false)

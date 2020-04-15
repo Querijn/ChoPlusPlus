@@ -3211,30 +3211,6 @@ namespace cho
 			static const char* method = "get_master_league";
 			static const char* service = "tft_league_v1";
 
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
-
 			std::string path = string_format("%s/tft/league/v1/master", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3289,30 +3265,6 @@ namespace cho
 			static const char* method = "get_challenger_league";
 			static const char* service = "tft_league_v1";
 
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
-
 			std::string path = string_format("%s/tft/league/v1/challenger", g_riot_api_servers[static_cast<int>(a_platform)]);
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3366,30 +3318,6 @@ namespace cho
 		{
 			static const char* method = "get_grandmaster_league";
 			static const char* service = "tft_league_v1";
-
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
 
 			std::string path = string_format("%s/tft/league/v1/grandmaster", g_riot_api_servers[static_cast<int>(a_platform)]);
 
@@ -3446,30 +3374,6 @@ namespace cho
 		{
 			static const char* method = "get_league_by_id";
 			static const char* service = "tft_league_v1";
-
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
 
 			std::string path = string_format("%s/tft/league/v1/leagues/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_league_id).c_str());
 
@@ -3531,30 +3435,6 @@ namespace cho
 			static const char* method = "get_league_entries";
 			static const char* service = "tft_league_v1";
 
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
-
 			std::string path = string_format("%s/tft/league/v1/entries/%s/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_tier).c_str(), cho::request::url_encode(a_division).c_str());
 			bool is_first = true;
 			setup_optional_argument(path, "page", a_optional.page, is_first);
@@ -3612,30 +3492,6 @@ namespace cho
 		{
 			static const char* method = "get_league_entries_for_summoner";
 			static const char* service = "tft_league_v1";
-
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
 
 			std::string path = string_format("%s/tft/league/v1/entries/by-summoner/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
@@ -3865,30 +3721,6 @@ namespace cho
 			static const char* method = "get_by_summoner_id";
 			static const char* service = "tft_summoner_v1";
 
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
-
 			std::string path = string_format("%s/tft/summoner/v1/summoners/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_summoner_id).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -3944,30 +3776,6 @@ namespace cho
 		{
 			static const char* method = "get_by_summoner_name";
 			static const char* service = "tft_summoner_v1";
-
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
 
 			std::string path = string_format("%s/tft/summoner/v1/summoners/by-name/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_summoner_name).c_str());
 
@@ -4025,30 +3833,6 @@ namespace cho
 			static const char* method = "get_by_puuid";
 			static const char* service = "tft_summoner_v1";
 
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
-
 			std::string path = string_format("%s/tft/summoner/v1/summoners/by-puuid/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_puuid).c_str());
 
 			auto request = a_riot_api->make_request(a_platform, service, method, path.c_str());
@@ -4104,30 +3888,6 @@ namespace cho
 		{
 			static const char* method = "get_by_account_id";
 			static const char* service = "tft_summoner_v1";
-
-			switch (a_platform)
-			{
-			case cho::platform_id::eun1:
-			case cho::platform_id::euw1:
-			case cho::platform_id::tr1:
-			case cho::platform_id::ru:
-				a_platform = cho::platform_id::europe;
-				break;
-
-			case cho::platform_id::jp1:
-			case cho::platform_id::kr:
-				a_platform = cho::platform_id::asia;
-				break;
-
-			case cho::platform_id::la1:
-			case cho::platform_id::la2:
-			case cho::platform_id::na1:
-			case cho::platform_id::oc1:
-			case cho::platform_id::pbe1:
-			case cho::platform_id::br1:
-				a_platform = cho::platform_id::americas;
-				break;
-			}
 
 			std::string path = string_format("%s/tft/summoner/v1/summoners/by-account/%s", g_riot_api_servers[static_cast<int>(a_platform)], cho::request::url_encode(a_encrypted_account_id).c_str());
 

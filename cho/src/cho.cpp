@@ -7,7 +7,7 @@
 
 namespace cho
 {
-	version_t version = version_t(1, 0, 1);
+	version_t version = version_t(1, 0, 2);
 	std::string useragent = std::string("ChoPlusPlus v") + std::string(version);
 
 	const version_t version_t::null = version_t(0, 0, 0);

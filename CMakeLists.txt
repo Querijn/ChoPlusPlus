@@ -13,7 +13,8 @@ set(BUILD_CURL_EXE OFF CACHE BOOL "" FORCE) # Just using libcurl
 set(BUILD_TESTING OFF CACHE BOOL "" FORCE) # No tests
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE) # Build into cho++
 set(ENABLE_MANUAL OFF CACHE BOOL "" FORCE) # No manuals
-set(CHO_BUILD_GENERATOR OFF CACHE BOOL "" FORCE) # Build into cho++
+
+option(CHO_BUILD_GENERATOR "Build the optional Cho++ generator" OFF) # Build generator
 
 # OpenSSL
 if(WIN32)
